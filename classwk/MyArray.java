@@ -1,3 +1,4 @@
+package classwk;
 class MyArray {
     int[] arr;
     int size = 0;

@@ -1,3 +1,4 @@
+package classwk;
 public class One{
     public static void print(int x){
         System.out.println(x);
