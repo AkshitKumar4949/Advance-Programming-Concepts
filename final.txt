@@ -1,0 +1,3 @@
+Final keyword in java is used to declare a variable unchangable.
+If a method is declared final in abstract class then it cannot be overriden in sub class.
+If a class is declared final then it can't be extended.

@@ -1,0 +1,2 @@
+Interface methods are by default public and abstract while interface variables are by default public static final.
+We can make a method static if we have to write something in its body.
