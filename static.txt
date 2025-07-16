@@ -1,0 +1,5 @@
+Static keyword in java is used to make a variable attached to a class means you don't need object of that class to access it.
+Static block in java classes is used to initialize value of variable .
+If a variable , method is declared static then it doesn't belongs to object or instance.
+A static method can not use non-static data members.
+A static method can not access non-static method by using this keyword.
