@@ -1,0 +1,1 @@
+In Java, ArrayList is not thread-safe because its methods are not synchronized, whereas Vector is thread-safe because all of its methods are synchronized, making it suitable for use in multi-threaded environments (though less efficient).
