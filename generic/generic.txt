@@ -1,0 +1,66 @@
+Generics were introduced (in Java 5) to make classes, interfaces, and methods type-safe and reusable without having to cast or write duplicate code for each data type.
+Generics in Java are used to make a class or interface type-flexible.
+It means we can create objects that work with any data type, which is specified at the time of object creation.
+We add <T> with the class or interface to define a generic type.
+
+Bounded type parameters : It can be used to restrict the allowable types
+package generic;
+
+public class Box<T extends Number> {
+    private T integer;
+    public void setValue(T value){
+        this.integer = value;
+    }
+    public T getValue(){
+        return integer;
+    }
+    public static void main(String args[]){
+        Box<String> obj = new Box<>(); 
+        obj.setValue("fdaf");
+        System.out.println(obj.getValue());
+        Box<Integer> obj1 = new Box<>();
+        obj1.setValue(4);
+        System.out.println(obj1.getValue());
+    }
+}
+
+In above code the type is bounded as it bounds the parameter type to be from  any of the sub class of Number class and it can't be some String or anything else.
+
+Now this code will give compile time error:
+
+    Box<String> obj = new Box<>();
+"String cannot be converted to Number" would be the error  given by compiler.
+
+If you have to bound type parameter to both interface and class then class is written first.
+Eg: 
+    class Box<T extends Number(class) & Printable(Interface)>{}
+
+A bounded type parameter:
+    Can extend at most one class
+    Can implement multiple interfaces
+
+In a class only constructor could be made generic no need to make class generic.
+
+When you don’t need to know the exact type, especially for operations like setting values, wildcards (?) in generics are often the right tool — and there's a specific reason behind their usage in setters and getters
+
+Eg: 
+    class Box<T> {
+        private T value;
+
+        public void setValue(T value) {
+            this.value = value;
+        }
+
+        // Accepts any subtype of T
+        public void setValueWildcard(Box<? extends T> otherBox) {
+            this.value = otherBox.getValue(); // Safe because value is a subtype of T
+        }
+
+        public T getValue() {
+            return value;
+        }
+    }
+
+During compile time, the Java compiler (not the JVM) removes all generic type information and replaces it with the appropriate raw types or type bounds. This process is called type erasure. It allows generic code to be compatible with legacy Java code that predates generics.
+
+Java Generics + Exceptions are tricky because of type erasure, and that’s why we often bound the type parameter to Exception or Throwable when dealing with exceptions in generics.
