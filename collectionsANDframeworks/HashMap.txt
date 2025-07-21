@@ -1,0 +1,34 @@
+### ✅ HashMap in Java
+
+🔸 **Definition:**
+- Part of Java Collections Framework.
+- Implements the `Map<K, V>` interface.
+- Stores data as key-value pairs.
+- Keys must be unique; one key maps to one value.
+
+🔸 **Characteristics:**
+- ❌ Does **not maintain order** (neither insertion nor sorted).
+- ✅ **Allows one null key** and **multiple null values**.
+- ✅ **Values can be duplicated**, but keys cannot.
+- ❌ Not thread-safe (use `Collections.synchronizedMap()` or `ConcurrentHashMap` if needed).
+
+🔸 **Common Methods:**
+- `put(K key, V value)` – Adds or updates a key-value pair.
+- `get(Object key)` – Returns the value for the given key.
+- `containsKey(Object key)` – Checks if a key exists.
+- `containsValue(Object value)` – Checks if a value exists.
+- `remove(Object key)` – Removes the key-value pair for the given key. And it returns a boolean.
+- `keySet()` – Returns a `Set` of all keys.
+- `values()` – Returns a `Collection` of all values.
+- `entrySet()` – Returns a `Set` of all key-value mappings.
+
+Time Performance for each above method is in O(1).
+
+🔸 **Usage Example:**
+```java
+Map<String, Integer> map = new HashMap<>();
+map.put("apple", 3);
+map.put("banana", 2);
+System.out.println(map.get("apple")); // Output: 3
+```
+

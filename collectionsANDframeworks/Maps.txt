@@ -1,0 +1,32 @@
+✅ Map Summary in Java
+
+🔹 Map stores data in key-value pairs.
+🔹 It is NOT part of the Collection interface (but exists in java.util).
+🔹 Each key is unique and maps to exactly one value.
+
+🔸 Common Implementations:
+▪ HashMap – No guaranteed order.
+▪ LinkedHashMap – Maintains insertion order.
+▪ TreeMap – Maintains keys in sorted (natural or custom) order.
+▪ Hashtable – Legacy, synchronized, no null keys or values.
+▪ ConcurrentHashMap – Thread-safe version of HashMap.
+
+🔸 Characteristics:
+▪ Keys must be unique. Duplicate keys overwrite existing values.
+▪ One null key is allowed in HashMap, but not in Hashtable or TreeMap.
+▪ Multiple null values are allowed in HashMap and LinkedHashMap.
+
+🔸 Useful Methods:
+▪ put(key, value) – Inserts or updates mapping.
+▪ get(key) – Returns value for key or null if not present.
+▪ containsKey(key) / containsValue(value) – Checks existence.
+▪ remove(key) – Removes entry by key.
+▪ keySet() – Returns all keys.
+▪ values() – Returns all values.
+▪ entrySet() – Returns all key-value pairs as a Set.
+
+🔸 Use Cases:
+▪ Fast lookups (HashMap).
+▪ Ordered access (LinkedHashMap).
+▪ Sorted access (TreeMap).
+▪ Thread-safe maps (ConcurrentHashMap).
