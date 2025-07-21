@@ -56,5 +56,6 @@ public class Main {
         } finally {
             System.out.println("Machine shutting down...");
         }
+        sc.close();
     }
 }
