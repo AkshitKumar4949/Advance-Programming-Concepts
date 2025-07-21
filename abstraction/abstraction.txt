@@ -1,0 +1,24 @@
+Abstract Class in Java:
+
+Definition:
+An abstract class is a class that cannot be instantiated directly, meaning you can't create objects of it using new.
+
+Abstract Methods:
+It can contain abstract methods — methods without a body, just the signature.
+
+Example:
+abstract void makeSound();  // No body
+
+Concrete Methods:
+It can also contain regular methods with a body (unlike interfaces before Java 8).
+
+Purpose:
+Abstract classes are used to provide a common base class for other classes to extend, especially when you want to enforce some method structure but leave implementation to child classes.
+
+abstract class Animal {
+    abstract void makeSound(); // abstract method
+    
+    void eat() {               // concrete method
+        System.out.println("Eating...");
+    }
+}

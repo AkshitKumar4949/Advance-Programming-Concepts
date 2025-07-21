@@ -1,2 +1,11 @@
-Interface methods are by default public and abstract while interface variables are by default public static final.
-We can make a method static if we have to write something in its body.
+An interface in Java is a blueprint for a class. It defines a set of abstract methods that any implementing class must override, specifying what the class should do, not how.
+
+By default:
+
+All methods are public and abstract.
+
+All variables are public, static, and final.
+
+Java allows concrete methods in interfaces using the default or static keyword.
+
+A class can implement multiple interfaces, which is how Java achieves multiple inheritance using interfaces.
