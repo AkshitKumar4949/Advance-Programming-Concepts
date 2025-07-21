@@ -1,3 +1,8 @@
+// ✅ ArrayList Summary in Java
+
+// 🔹 ArrayList is a resizable array implementation of the List interface.
+// 🔹 It allows random access and duplicates and maintains insertion order.
+
 package collectionsANDframeworks;
 
 import java.util.*;

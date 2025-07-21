@@ -1,0 +1,7 @@
+LinkedList has different characterstics compared to ArrayList:
+
+Insertions and Deletions: LinkedList is better for frequent insertions and deletions in middle of the list because it does not require shifting elements, as in ArrayList.
+
+Random Access: LinkedList has slower random access compared to ArrayList because it has to traversethe list from the beginning to reach the desired index.
+
+Memory Overhead: LinkedList requires more memory than ArrayList because each node in a linked list requires extra memory to store references to the next and previous nodes.
