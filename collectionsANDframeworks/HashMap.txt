@@ -32,3 +32,28 @@ map.put("banana", 2);
 System.out.println(map.get("apple")); // Output: 3
 ```
 
+### 🔍 Internal Working of HashMap in Java
+
+1. **Hashing Process:**
+   - When a key-value pair is inserted using `.put(key, value)`, the key is passed to a **hash function**.
+   - The hash function generates a **hash code** (an integer).
+
+2. **Index Calculation:**
+   - From the hash code, the bucket index in the internal array is computed using:
+     ```
+     index = hashCode % arraySize;
+     ```
+   - In practice, Java uses `(hash & (n - 1))` for better performance when array size is a power of 2.
+
+3. **Storing the Entry:**
+   - The key-value pair is placed in the bucket (array index) returned by the hash.
+   - If that index already contains entries (collision), Java uses:
+     - **Linked List (Java 7 and earlier)**
+     - **Balanced Tree (Java 8+)** if entries exceed a threshold (for faster lookup).
+
+4. **Retrieving a Value:**
+   - The key is passed through the same hash function.
+   - The index is calculated.
+   - Java checks for the correct key at that index (handles hash collisions by comparing keys via `.equals()`).
+
+---
