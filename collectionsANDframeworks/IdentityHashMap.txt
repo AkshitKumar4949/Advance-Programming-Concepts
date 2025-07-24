@@ -1,0 +1,12 @@
+| Feature            | HashMap          | IdentityHashMap                         |
+| ------------------ | ---------------- | --------------------------------------- |
+| Key comparison     | `.equals()`      | `==` (reference equality)               |
+| Hash function used | `.hashCode()`    | `System.identityHashCode()`             |
+| Same content keys  | Considered equal | Considered different if not same ref    |
+| Use case           | General purpose  | Special cases (like reference tracking) |
+
+Key comparison: Uses == operator (object identity) instead of .equals().
+
+Hashing: Uses System.identityHashCode(), which returns a hash based on the object's memory address (not .hashCode()).
+
+Behavior: Treats different objects as distinct even if their content is equal.
