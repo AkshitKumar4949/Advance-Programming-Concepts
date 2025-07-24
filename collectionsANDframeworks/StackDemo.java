@@ -11,6 +11,7 @@ public class StackDemo {
         st.push(5);
         st.pop();
         System.out.println(st.peek());
+        // stack has 2 methods one is isempty(isempty is overridden function from list) and other is empty (empty is stack's own function).
         System.out.println(st);
     }
 }

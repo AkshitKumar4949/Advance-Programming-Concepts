@@ -57,3 +57,6 @@ System.out.println(map.get("apple")); // Output: 3
    - Java checks for the correct key at that index (handles hash collisions by comparing keys via `.equals()`).
 
 ---
+
+########################################################################################################################
+While writing our custom class we must must override hash function and equals function to keep our class work correctly.
