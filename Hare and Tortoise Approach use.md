@@ -1,0 +1,1 @@
+Used to find Middle node as slow goes to 1 and fast moves 2 points so when fast gets to last that is `fast.next == null` then slow will be at (n/2) same will be done to find (n/4) the node or any type of node from end. Just try to try around.
