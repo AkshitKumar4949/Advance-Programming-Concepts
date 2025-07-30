@@ -1,0 +1,5 @@
+As we know volatile keyword just handles the updated reading of the shared variable but if two threads update it at same time that't the problem in volatile keyword. So atomicity overcomes this problem as it helps the operation on shared variable to be isolated and hence thread safe.
+
+To solve this, Java provides atomic classes in java.util.concurrent.atomic like AtomicInteger, which offer atomic operations without locking.
+
+incrementAndGet() is an atomic operation — no two threads can interfere with each other.

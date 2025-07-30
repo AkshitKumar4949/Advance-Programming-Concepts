@@ -1,0 +1,33 @@
+What is the volatile Keyword?
+
+The volatile keyword in Java is used to indicate that a variable's value will be modified by different threads. It ensures that:
+# Reads and writes go directly to main memory, not thread-local caches.
+# Changes made by one thread are immediately visible to others.
+
+Why Use volatile?
+
+In Java, each thread can cache variables locally for performance reasons. Without volatile, a thread may read a stale or outdated value of a variable if another thread has modified it.
+By declaring a variable volatile, you prevent such caching, and all threads see the most up-to-date value.
+
+Example of Volatile keyword::
+
+class SharedData {
+    volatile boolean running = true;
+
+    public void stopRunning() {
+        running = false;
+    }
+
+    public void run() {
+        while (running) {
+            // do some work
+        }
+        System.out.println("Stopped.");
+    }
+}
+
+### volatile only guarantees visibility, not atomicity .
+
+# Use volatile when multiple threads read and write a single variable, and you only need visibility, not atomic operations.
+
+# It’s lighter than synchronized but less powerful.

@@ -1,0 +1,21 @@
+What is synchronized keyword?
+
+The synchronized keyword in Java is used to control access to blocks of code or methods to ensure thread safety. When a method or block of code is declared as synchronized, only one thread at a time can execute it for a given object (or class, in the case of static synchronization).It ensures mutual exclusion on a shared resource.
+
+Why Use synchronized?
+
+In multithreaded programs, multiple threads may try to access shared resources (like variables, files, or databases) concurrently. Without proper synchronization, this can lead to data inconsistency or race conditions.
+
+Synchronized method -->
+
+public synchronized void update() {
+    // only one thread can execute this at a time
+}
+
+Synchronized block -->
+
+public void update() {
+    synchronized(this) {
+        // critical section
+    }
+}
