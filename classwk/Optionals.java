@@ -11,26 +11,41 @@ public class Optionals {
         }
         return Optional.of(name[id - 1]);
     }
+    static Optional<String> getEmail(String str){
+        if(str.equals("Akshit")){
+            return Optional.of("akshitkumar4949@gmail.com");
+        }
+        return Optional.empty();
+    }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter ID: ");
-        int id = sc.nextInt();
-        sc.close();
-        Optional<String> nm = getname(id);
-        
-        if (nm.isPresent()) {
-            System.out.println("Name: " + nm.get());
-        } else {
-            System.out.println("Name is not there.");
-        }
+        // getEmail("Aksht").ifPresent(name->System.out.println(name));
 
-        getname(id).ifPresent((name)->System.out.println(name));
-        getname(id).ifPresentOrElse(
-            (name)->System.out.println(name), 
-            ()->System.out.print("Not a name"));
+        Optional<String> email = getEmail("Aksit");
+        if(email.isPresent()){
+            System.out.println(email.get());
+        }
+        else{
+            System.out.println("user not found");
+        }
+        // Scanner sc = new Scanner(System.in);
+        // System.out.print("Enter ID: ");
+        // int id = sc.nextInt();
+        // sc.close();
+        // Optional<String> nm = getname(id);
         
-        String x = getname(id).orElseThrow(()-> new ArrayIndexOutOfBoundsException());
-        System.out.println("name is "+x);
+        // if (nm.isPresent()) {
+        //     System.out.println("Name: " + nm.get());
+        // } else {
+        //     System.out.println("Name is not there.");
+        // }
+
+        // getname(id).ifPresent((name)->System.out.println(name));
+        // getname(id).ifPresentOrElse(
+        //     (name)->System.out.println(name), 
+        //     ()->System.out.print("Not a name"));
+        
+        // String x = getname(id).orElseThrow(()-> new ArrayIndexOutOfBoundsException());
+        // System.out.println("name is "+x);
     }
 }

@@ -1,0 +1,63 @@
+✅ Java Heap Memory Divisions
+
+1. Young Generation (Young Gen)
+Subdivided into:
+Eden Space: New objects are first allocated here.
+Survivor Spaces (S0 and S1): Also known as Survivor 0 (From) and Survivor 1 (To).
+
+How it works:
+When new objects are created, they go to Eden.
+During a minor GC, live objects in Eden are moved to a Survivor space (say S0).
+On the next minor GC, surviving objects move from S0 to S1 (or vice versa).
+
+After surviving several GC cycles (usually around 15, configurable with MaxTenuringThreshold), they are promoted to the Old Generation.
+
+2. Old Generation (Tenured Gen)
+Holds: Long-lived objects — those that have survived multiple GC cycles.
+
+Garbage Collection: Happens less frequently but takes longer (called a Major GC or Full GC).
+
+Goal: Reduce GC frequency for stable objects.
+
+3. Metaspace (replaced PermGen in Java 8+)
+Stores: Class metadata (class definitions, method data, etc.).
+
+Key traits:
+
+Not part of the heap anymore.
+
+Grows automatically by default (limited by available native memory unless constrained with flags like -XX:MaxMetaspaceSize).
+
+📌 Survivor Spaces: S0 & S1
+Double buffering technique:
+
+Only one Survivor space is active at a time.
+
+After each GC, roles of S0 and S1 switch.
+
+Objects not collected are copied between survivor spaces until they're old enough to move to the Old Gen.
+
+🔁 Object Lifecycle Summary:
+New object → Eden
+
+Minor GC → Survivors go to S0
+
+Next Minor GC → Surviving objects copied to S1
+
+After several such cycles → Move to Old Gen
+
+🧠 Garbage Collectors Involved:
+Minor GC: Cleans Young Gen.
+
+Major/Full GC: Cleans Old Gen and possibly Metaspace.
+
+Common GC Algorithms:
+
+Serial GC
+
+Parallel GC
+
+G1 GC (breaks heap into regions, manages both Young and Old more flexibly)
+
+ZGC / Shenandoah GC (for ultra-low latency)
+
